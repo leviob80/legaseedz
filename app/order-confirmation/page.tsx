@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { loadStripe } from '@stripe/stripe-js'
@@ -15,7 +15,7 @@ const stripePromise = process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 
 type PaymentStatus = 'loading' | 'succeeded' | 'processing' | 'failed' | 'unconfigured'
 
-export default function OrderConfirmationPage() {
+function OrderConfirmationContent() {
   const searchParams = useSearchParams()
   const { clearCart } = useCartStore()
   const [status, setStatus] = useState<PaymentStatus>('loading')
@@ -172,5 +172,17 @@ export default function OrderConfirmationPage() {
 
       </div>
     </main>
+  )
+}
+
+export default function OrderConfirmationPage() {
+  return (
+    <Suspense fallback={
+      <main className="min-h-screen bg-background flex items-center justify-center">
+        <div className="w-10 h-10 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+      </main>
+    }>
+      <OrderConfirmationContent />
+    </Suspense>
   )
 }
