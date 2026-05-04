@@ -9,7 +9,7 @@ const articles = [
     category: 'Strain Education',
     title: 'What Makes a True Legacy Strain?',
     excerpt:
-      'Not every strain with a famous name is the real thing. Here's how we verify genetic lineage and what separates a legacy cut from a recreation.',
+      "Not every strain with a famous name is the real thing. Here's how we verify genetic lineage and what separates a legacy cut from a recreation.",
     readTime: '4 min read',
   },
   {
@@ -25,7 +25,7 @@ const articles = [
     category: 'Brand Story',
     title: 'Why We Only Work with Local Legacy Growers',
     excerpt:
-      'Big seed banks went global. We went the opposite direction. Here's why staying local matters to us and to the integrity of every pack we sell.',
+      "Big seed banks went global. We went the opposite direction. Here's why staying local matters to us and to the integrity of every pack we sell.",
     readTime: '5 min read',
   },
 ]
