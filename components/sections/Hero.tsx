@@ -70,22 +70,35 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2"
         >
           <Button variant="gold" size="xl" asChild>
-            <Link href="/shop">
+            <Link href="/shop/seeds">
               Shop Genetics <ArrowRight className="w-4 h-4" />
             </Link>
           </Button>
           <Button variant="outline" size="xl" asChild>
-            <Link href="/drops">View Drops</Link>
+            <Link href="/about">Our Story</Link>
           </Button>
         </motion.div>
 
-        {/* Social proof ticker */}
-        <motion.p
+        {/* Trust strip */}
+        <motion.div
           {...fadeUp(0.4)}
-          className="text-[10px] tracking-[0.2em] uppercase text-muted-foreground/40 pt-4"
+          className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-6"
         >
-          Feminized &nbsp;·&nbsp; Regular &nbsp;·&nbsp; Autoflower &nbsp;·&nbsp; Limited Batches
-        </motion.p>
+          {[
+            'Legacy Verified',
+            'Small Batch Only',
+            'Grower-Direct',
+            'St. Louis Rooted',
+          ].map((item) => (
+            <span
+              key={item}
+              className="flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-muted-foreground/50"
+            >
+              <span className="w-1 h-1 rounded-full bg-primary/40" />
+              {item}
+            </span>
+          ))}
+        </motion.div>
       </div>
 
       {/* Scroll indicator */}

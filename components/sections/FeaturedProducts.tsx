@@ -24,7 +24,7 @@ export function FeaturedProducts() {
             <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-2">
               Current Lineup
             </p>
-            <h2 className="font-serif text-4xl text-foreground">Featured Drops</h2>
+            <h2 className="font-serif text-4xl text-foreground">Featured Genetics</h2>
           </motion.div>
 
           <motion.div
